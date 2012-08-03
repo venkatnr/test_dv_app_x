@@ -1,0 +1,39 @@
+<h1>Listing usdemos</h1>
+<% @projects.each do |pro| %>
+<%= pro.name %>
+<% end %>
+<% @iteration.each do |it| %>
+<%= it.name %>
+<% end %>
+
+<table>
+  <tr align ="center">
+    <th>US-ID</th>
+    <th>Name</th>
+    <th>Disposition</th>
+    <th>Customer</th>
+    <th>Tracker</th>
+    <th>Status</th>
+    <th>Estimated hours</th>
+    <th>Description</th>
+    <th>iteration id</th>
+    <th>project id</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @usdemos.each do |usdemo| %>
+  <tr align ="center">
+    <td><%= usdemo.id %></td>
+    <td><%= usdemo.name %></td>
+    <td><%= usdemo.disposition %></td>
+    <td><%= usdemo.customer %></td>
+    <td><%= usdemo.tracker %></td>
+    <td><%= usdemo.status %></td>
+    <td><%= usdemo.estimated_hours %></td>
+    <td><%= usdemo.description%></td>
+    <td><%= usdemo.iteration_id%></td>
+    <td><%= usdemo.projectid%></td>
+  </tr>
+<% end %>
+</table>

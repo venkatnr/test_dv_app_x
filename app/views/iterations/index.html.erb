@@ -1,6 +1,6 @@
 <%= @project.name %><br>
 <%@iterations.each do |currentprojectiterations|%>
-	<%= currentprojectiterations.name%>
+	<%= link_to currentprojectiterations.name, new_project_iteration_usdemo_path(currentprojectiterations.project_id, currentprojectiterations.id ) %>
 	<%= currentprojectiterations.description%>
 	<%= currentprojectiterations.start_date%>
 	<%= currentprojectiterations.end_date%>
