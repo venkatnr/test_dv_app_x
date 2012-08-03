@@ -14,7 +14,7 @@
 <% @projects.each do |project| %>
   <tr>
 	<td><%= project.id %></td>
-    <td><%= link_to project.name, project %></td>
+    <td><%= link_to project.name, new_project_iteration_path(project.id) %></td>
     <td><%= link_to(image_tag('editing.png' ), edit_project_path(project), :class => "edittag") %> </td>
     <td><%= link_to image_tag('delete.png'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
