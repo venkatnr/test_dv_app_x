@@ -1,0 +1,11 @@
+<%= @project.name %><br>
+<%@iterations.each do |currentprojectiterations|%>
+	<%= currentprojectiterations.name%>
+	<%= currentprojectiterations.description%>
+	<%= currentprojectiterations.start_date%>
+	<%= currentprojectiterations.end_date%>
+	<%= currentprojectiterations.project_id%><br>
+<%end%>
+<br>
+<%= link_to "back to projects index", projects_path %><br>
+<%= link_to "create new itertaion for #{ @project.name} project", new_project_iteration_path(@project.id) %>

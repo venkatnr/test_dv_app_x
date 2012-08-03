@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802095712) do
+ActiveRecord::Schema.define(:version => 20120802134833) do
+
+  create_table "iterations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "project_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "iterations", ["project_id"], :name => "index_iterations_on_project_id"
 
   create_table "projects", :force => true do |t|
     t.string   "name"

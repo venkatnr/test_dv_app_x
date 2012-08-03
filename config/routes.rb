@@ -1,8 +1,11 @@
 Xplanner::Application.routes.draw do
-  resources :projects
+ 
 
+  resources :projects do
+	 resources :iterations
+  end
 
-   root :to => 'projects#index'
+  root :to => 'projects#index'
 
 
 end
