@@ -1,24 +1,37 @@
-<h1>Listing projects</h1>
+
 
 <table>
   <tr>
-	<th>Id</th>
-    <th>Name</th>  
+	<th>Project Id</th>
+    <th>Project Name</th>
+	
     <th></th>
     <th></th>
+	<th>Iterations</th>
+	<th>Userstories</th>
   </tr>
 
 <% @projects.each do |project| %>
   <tr>
 	<td><%= project.id %></td>
     <td><%= link_to project.name, project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to(image_tag('editing.png' ), edit_project_path(project), :class => "edittag") %> </td>
+    <td><%= link_to image_tag('delete.png'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to image_tag('New.png'), new_project_path %>
 
+<%#= image_tag "ruby.jpg" , :size => "200x100"%>
+
+
+
+
+<style>
+.edittag {
+    text-decoration: none;
+}
+</style>
