@@ -26,7 +26,9 @@ class IterationsController < ApplicationController
   # GET /iterations/new
   # GET /iterations/new.json
   def new
-   
+     @project = Project.find(params[:project_id])
+	#raise @project.inspect
+    @iterations = Iteration.find(:all, :conditions => {:project_id  =>  @project.id})
     @iteration = Iteration.new
 
     respond_to do |format|
