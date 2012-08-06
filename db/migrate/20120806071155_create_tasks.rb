@@ -5,7 +5,8 @@ class CreateTasks < ActiveRecord::Migration
       t.string :task_type
       t.string :disposition
       t.string :acceptor
-      t.string :estimater_hours
+      t.float :estimater_hours
+      t.integer :proid
       t.text :description
       t.references :usdemo
 

@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(:version => 20120806071155) do
     t.string   "task_type"
     t.string   "disposition"
     t.string   "acceptor"
-    t.string   "estimater_hours"
+    t.float    "estimater_hours"
+    t.integer  "proid"
     t.text     "description"
     t.integer  "usdemo_id"
     t.datetime "created_at",      :null => false
