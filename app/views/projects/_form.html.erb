@@ -1,15 +1,5 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @project do |f| %>
+  <%= f.text_field :user_id, :value => current_user.id, :class => "user_id"%>	
 
   <div class="field">
     <%= f.label :name %><br />
@@ -23,3 +13,6 @@
     <%= f.submit %>
   </div>
 <% end %>
+<style>
+	.user_id{ visibility:hidden;}
+</style>

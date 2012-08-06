@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806071155) do
+ActiveRecord::Schema.define(:version => 20120806113048) do
 
   create_table "iterations", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120806071155) do
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -62,5 +63,13 @@ ActiveRecord::Schema.define(:version => 20120806071155) do
   end
 
   add_index "usdemos", ["iteration_id"], :name => "index_usdemos_on_iteration_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

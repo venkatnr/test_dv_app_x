@@ -58,5 +58,7 @@ module Xplanner
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.secret_token = 'ac366a626e4dca6f85397e7bff6fa3c21d719480ab80982743cfe875ef50ccc8064ad1fa7ce03f2e1be97031896685780ec220dbf991aeadfd6587758bd8d016'
+
   end
 end
