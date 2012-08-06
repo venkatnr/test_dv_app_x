@@ -3,10 +3,12 @@ class UsdemosController < ApplicationController
   # GET /usdemos.json
   def index
     @projects = Project.all
-    @iteration = Iteration.find(:all)
+    @iteration = Iteration.find(params[:iteration_id])
+    #raise @iteration.name.inspect
    # raise @iteration.inspect
     @usdemos = Usdemo.all
-    
+    #@usdemo = Usdemo.find(params[:id])
+
 
     respond_to do |format|
       format.html # index.html.erb

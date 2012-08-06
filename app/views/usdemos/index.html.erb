@@ -1,11 +1,3 @@
-<h1>Listing usdemos</h1>
-<% @projects.each do |pro| %>
-<%= pro.name %>
-<% end %>
-<% @iteration.each do |it| %>
-<%= it.name %>
-<% end %>
-
 <table>
   <tr align ="center">
     <th>US-ID</th>
@@ -22,18 +14,20 @@
     <th></th>
     <th></th>
   </tr>
+  <%  current_iteration = @iteration.id %>
+<%#= raise @usdemos.iterations.inspect%>
 <% @usdemos.each do |usdemo| %>
   <tr align ="center">
     <td><%= usdemo.id %></td>
-    <td><%= usdemo.name %></td>
+    <td><%= link_to usdemo.name, new_project_iteration_usdemo_task_path(usdemo.projectid, usdemo.iteration_id, usdemo.id ) %></td>
     <td><%= usdemo.disposition %></td>
     <td><%= usdemo.customer %></td>
     <td><%= usdemo.tracker %></td>
     <td><%= usdemo.status %></td>
     <td><%= usdemo.estimated_hours %></td>
     <td><%= usdemo.description%></td>
-    <td><%= usdemo.iteration_id%></td>
-    <td><%= usdemo.projectid%></td>
+    <td><% it_is =usdemo.iteration_id %><% iteration_name = Iteration.find_by_id(it_is) %><%=iteration_name.name %></td>
+    <td><% pro_id = usdemo.projectid%><% pro = Project.find_by_id(pro_id) %><%= pro.name %></td>
   </tr>
 <% end %>
 </table>
