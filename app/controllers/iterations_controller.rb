@@ -83,7 +83,7 @@ class IterationsController < ApplicationController
     @iteration.destroy
 
     respond_to do |format|
-      format.html { redirect_to iterations_url }
+      format.html { redirect_to project_iterations_url }
       format.json { head :no_content }
     end
   end

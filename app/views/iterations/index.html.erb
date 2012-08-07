@@ -4,7 +4,8 @@
 	<%= currentprojectiterations.description%>
 	<%= currentprojectiterations.start_date%>
 	<%= currentprojectiterations.end_date%>
-	<%= currentprojectiterations.project_id%><br>
+	<%#= currentprojectiterations.project_id%>
+	<%= link_to "delete", [@project, currentprojectiterations], confirm: 'Are you sure?', :method => :delete  %><br>
 <%end%>
 <br>
 <%= link_to "back to projects index", projects_path %><br>
