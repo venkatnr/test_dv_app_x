@@ -1,4 +1,6 @@
-<%= link_to "show all the iterations belongs to this page", project_iterations_path(@project.id) %>
+<%= javascript_include_tag('jquery-1.7.2','jquery.ui.core','jquery.ui.widget', 'jquery.ui.datepicker', 'dashboard_againstmyself')%>
+<%= stylesheet_link_tag('jquery.ui.all')%>
+<br><%= link_to "show all the iterations belongs to this page", project_iterations_path(@project.id) %>
 
 <h1>New iteration</h1>
 

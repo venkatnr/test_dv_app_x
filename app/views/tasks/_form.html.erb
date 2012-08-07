@@ -15,11 +15,13 @@
   </div>
   <div class="field">
     <%= f.label :acceptor %><br />
-    <%= f.text_field :acceptor %>
+    <%#= f.text_field :acceptor %>
+    <%= f.select :acceptor, User.find(:all).collect{|p|[p.name]},  {:include_blank => 'select'} %>
+
   </div>
   <div class="field">
     <%= f.label :estimater_hours %><br />
-    <%= f.text_field :estimater_hours %>
+    <%= f.text_field :estimater_hours, :placeholder => "0.0"%>
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -33,3 +35,4 @@
 <style>
 	.proid{ visibility:hidden;}
 </style>
+
