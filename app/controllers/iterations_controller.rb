@@ -40,6 +40,7 @@ class IterationsController < ApplicationController
   # GET /iterations/1/edit
   def edit
     @iteration = Iteration.find(params[:id])
+	# raise   @iteration.inspecv
   end
 
   # POST /iterations

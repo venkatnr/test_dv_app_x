@@ -1,11 +1,22 @@
+<table border = 1>
 <%= @project.name %><br>
+
+
 <%@iterations.each do |currentprojectiterations|%>
+	<tr>
 	<%= link_to currentprojectiterations.name, new_project_iteration_usdemo_path(currentprojectiterations.project_id, currentprojectiterations.id ) %>
 	<%= currentprojectiterations.description%>
 	<%= currentprojectiterations.start_date%>
 	<%= currentprojectiterations.end_date%>
-	<%= currentprojectiterations.project_id%><br>
+	<%= currentprojectiterations.project_id%>
+	<%= link_to "Edit", edit_project_iteration_path(currentprojectiterations.project_id, currentprojectiterations.id) %>
+	<%= link_to "Destroy",  %>
+
+	 <%=  @iteration %><br>
+	</tr>
 <%end%>
+<table>
+
 <br>
 <%= link_to "back to projects index", projects_path %><br>
 <%= link_to "create new itertaion for #{ @project.name} project", new_project_iteration_path(@project.id) %>
