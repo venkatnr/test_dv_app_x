@@ -26,7 +26,7 @@
     <td><%= task.description %></td>
     <td><%= task.usdemo_id %></td>
     <td><% iid=  task.usdemo.iteration.id %><% i_name = Iteration.find_by_id(iid)%><%= link_to i_name.name, new_project_iteration_path%></td>
-    <td><% pid = task.usdemo.projectid %><% pj_name=Project.find_by_id(pid)%><%= link_to pj_name.name, projects_path %> </td>
+    <td><% pid = task.usdemo.projectid %><% pj_name=Project.find_by_id(pid)%><%= pj_name.name %> </td>
     
    
   </tr>
@@ -35,7 +35,9 @@
 
 <br />
 
-<%#= link_to 'New Task', new_task_path %>
+<%= link_to 'Show all projects', projects_path %><br>
+<%= link_to 'Create new task', new_project_iteration_usdemo_task_path %>
+
  <td><%#= link_to 'Show', task %></td>
     <td><%#= link_to 'Edit', edit_task_path(task) %></td>
     <td><%#= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
