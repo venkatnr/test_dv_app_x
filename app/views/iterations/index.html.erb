@@ -5,6 +5,7 @@
 	<%= currentprojectiterations.start_date%>
 	<%= currentprojectiterations.end_date%>
 	<%#= currentprojectiterations.project_id%>
+	<%= link_to "Edit", edit_project_iteration_path(currentprojectiterations.project_id, currentprojectiterations.id) %>
 	<%= link_to "delete", [@project, currentprojectiterations], confirm: 'Are you sure?', :method => :delete  %><br>
 <%end%>
 <br>
