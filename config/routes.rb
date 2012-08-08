@@ -14,5 +14,5 @@ Xplanner::Application.routes.draw do
 	 end
   end
 
-  root :to => 'projects#index'
+  root :to => 'sessions#destroy'
 end
