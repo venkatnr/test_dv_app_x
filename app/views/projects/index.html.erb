@@ -42,8 +42,9 @@
 								<%#= current_iter%>
 								<%#= raise @iteration.inspect %>
 								<%#= raise @allusdemo.inspect%>
+							
 								<%if !current_iter.blank? %>
-									<%= link_to j, project_iteration_usdemos_path(project.id, current_iter) %>
+									<%= link_to j, project_iteration_usdemos_path(project.id, current_iter.first) %>
 								<%else%>
 									<%= link_to j%>
 								<%end%>
