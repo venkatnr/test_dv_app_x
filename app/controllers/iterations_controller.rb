@@ -48,8 +48,10 @@ class IterationsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     #raise @project.inspect
+   # raise params[:iteration].inspect
     @iteration = @project.iterations.build(params[:iteration])
 
+   #raise  @iteration.inspect
     respond_to do |format|
       if @iteration.save
         format.html { redirect_to project_iterations_url, notice: 'Iteration was successfully created.' }

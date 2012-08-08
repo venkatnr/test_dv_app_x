@@ -9,25 +9,22 @@
   </div>
   <div class="demo">
     <%= f.label :start_date %><br />
-    <%= f.text_field :start_date, :id => "datepicker" %>
+    <%= f.text_field :start_date, :id => :popupDatepicker %>
   </div>
   <div class="demo">
     <%= f.label :end_date %><br />
-    <%= f.text_field :end_date, :id => "datepicker1" %>
+    <%= f.text_field :end_date, :id => :popupDatepicker1 %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker({
-			altField: "#alternate",
-			altFormat: "DD, d MM, yy"
-		});
-			$( "#datepicker1" ).datepicker({
-			altField: "#alternate",
-			altFormat: "DD, d MM, yy"
-		});
-	});
-	</script>
+
+<script>
+$(function() {
+	$('#popupDatepicker').datepick({dateFormat: 'yyyy-mm-dd'});
+	
+	$('#popupDatepicker1').datepick({dateFormat: 'yyyy-mm-dd'});
+});
+
+</script>
