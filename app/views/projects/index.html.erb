@@ -49,16 +49,27 @@
 									<%= link_to j%>
 								<%end%>
 				</td>
-				<td >
-						
-					<% @allusdemo = Task.find(:all, :conditions => {:proid  =>  project.id})%>
-								<%arr = Array.new%>
-								<%k = 0%>
-								<% @allusdemo.each do |demo| %>
-									<% arr<< demo.id%>
-									<%k = k +1%>
-								<%end%>
-								<%= link_to k, %>
+				<td >						
+								<% @allusdemo = Task.find(:all, :conditions => {:proid  =>  project.id})%>
+									<%arr = Array.new%>
+									<%arr_usid = Array.new%>
+										<%k = 0%>
+										<% @allusdemo.each do |demo| %>
+											<% arr <<  demo.id%>
+											<% arr_usid << demo.usdemo_id%>
+											<%k = k +1%>
+										<%end%>
+										<%@iteration = Iteration.find(:all, :conditions => {:project_id => project.id})%>
+										<%arr_iteration = Array.new%>
+										<%@iteration.each do |iteration|%>
+											<%arr_iteration << iteration.id%>
+										<%end%>
+										
+										<%if ! arr_usid.blank? %>
+											<%= link_to k, project_iteration_usdemo_tasks_path(project.id, arr_iteration.first, arr_usid.first)%>
+										<%else%>
+											<%= link_to k%>
+										<%end%>
 				</td>
 		  </tr>
 
