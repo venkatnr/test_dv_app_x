@@ -1,6 +1,6 @@
 if Rails.env.production?
   OmniAuth.config.full_host = "http://xplanner.heroku.com"
-else
+else                           
   OmniAuth.config.full_host = "http://localhost:3000"
 end
 #OmniAuth.config.full_host = "http://localhost:3000"
